@@ -7,7 +7,7 @@
                 "SERVICE_TAGS": "demo-app",
                 "HAPROXY_0_REDIRECT_TO_HTTPS": "false",
                 "MARATHON_HOSTNAME": "demo-app",
-                "HAPROXY_0_VHOST": "demo-app.snakedetectiontheory.com",
+                "HAPROXY_0_VHOST": "demo-app.mesos.ov.otto.de",
                 "HAPROXY_0_PORT": "9001",
                 "HAPROXY_0_MODE": "http"
                 },
@@ -16,17 +16,25 @@
     "docker": {
     "parameters": [
       ],
-      "image": "nexus.snakedetectiontheory.com:14000/demo-app",
+      "image": "nexus.mesos.ov.otto.de:14000/demo-app",
       "network": "BRIDGE",
       "portMappings": [
         { "containerPort": 8359, "hostPort": 0, "servicePort": 0, "protocol": "tcp" }
       ]
     },
-    "uris":  [
-      "file:///etc/docker.tar.gz"
-        ]
+
+  "fetch": [
+   {
+    "uri": "file:///etc/docker.tar.gz",
+    "extract": true,
+    "executable": false,
+    "cache": false
+   }
+   ]
   },
-  "instances": 2,
+  "instances": 4,
   "cpus": 0.25,
   "mem": 64
 }
+
+

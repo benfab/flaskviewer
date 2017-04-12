@@ -23,20 +23,6 @@
         { "containerPort": 8359, "hostPort": 0, "servicePort": 0, "protocol": "tcp" }
       ]
     },
-
-  "healthChecks": [
-    {
-      "path": "/",
-      "protocol": "HTTP",
-      "portIndex": 0,
-      "gracePeriodSeconds": 300,
-      "intervalSeconds": 60,
-      "timeoutSeconds": 20,
-      "maxConsecutiveFailures": 3,
-      "ignoreHttp1xx": false
-    }
-  ],
-
   "fetch": [
    {
     "uri": "file:///etc/docker.tar.gz",
@@ -48,7 +34,18 @@
   },
   "instances": 4,
   "cpus": 0.25,
-  "mem": 64
+  "mem": 64,
+  "healthChecks": [
+    {
+      "protocol": "HTTP",
+      "path": "/",
+      "portIndex": 0,
+      "gracePeriodSeconds": 300,
+      "intervalSeconds": 60,
+      "timeoutSeconds": 20,
+      "maxConsecutiveFailures": 3
+    }
+  ]
 }
 
 

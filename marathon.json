@@ -24,6 +24,19 @@
       ]
     },
 
+  "healthChecks": [
+    {
+      "path": "/",
+      "protocol": "HTTP",
+      "portIndex": 0,
+      "gracePeriodSeconds": 300,
+      "intervalSeconds": 30,
+      "timeoutSeconds": 15,
+      "maxConsecutiveFailures": 3,
+      "ignoreHttp1xx": false
+    }
+  ],
+
   "fetch": [
    {
     "uri": "file:///etc/docker.tar.gz",

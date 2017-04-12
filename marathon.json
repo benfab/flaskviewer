@@ -17,6 +17,7 @@
     "parameters": [
       ],
       "image": "nexus.mesos.ov.otto.de:14000/demo-app",
+      "forcePullImage": true,
       "network": "BRIDGE",
       "portMappings": [
         { "containerPort": 8359, "hostPort": 0, "servicePort": 0, "protocol": "tcp" }

@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM debian:jessie
 MAINTAINER Stephen Knight "stephen.knight2@emc.com"
 RUN apt-get update -y && apt-get install -y python-pip python-dev build-essential
 COPY . /app
